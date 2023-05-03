@@ -13,10 +13,10 @@ class PlayerEntity extends me.Entity {
         this.alwaysUpdate = true;
 
         // walking & jumping speed
-        this.body.setMaxVelocity(10, 15);
-        this.body.setFriction(0.4, 0);
+        this.body.setMaxVelocity(10, 5);
+        this.body.setFriction(0.2, 0);
 
-        this.dying = false;
+        this.dying = true;
 
         this.multipleJump = 1;
 
@@ -107,7 +107,7 @@ class PlayerEntity extends me.Entity {
             }
             else if (this.body.falling && this.multipleJump < 2) {
                 // reset the multipleJump flag if falling
-                this.multipleJump = 2;
+                this.multipleJump = 0;
             }
         }
 
@@ -212,7 +212,7 @@ class PlayerEntity extends me.Entity {
         if (!sprite.isFlickering()) {
 
             // tint to red and flicker
-            sprite.tint.setColor(255, 192, 192);
+            sprite.tint.setColor(0, 192, 192);
             sprite.flicker(750, function () {
                 // clear the tint once the flickering effect is over
                 sprite.tint.setColor(255, 255, 255);
