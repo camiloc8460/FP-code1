@@ -13,7 +13,7 @@ class PlayerEntity extends me.Entity {
         this.alwaysUpdate = true;
 
         // walking & jumping speed
-        this.body.setMaxVelocity(10, 5);
+        this.body.setMaxVelocity(11, 15);
         this.body.setFriction(0.2, 0);
 
         this.dying = true;
